@@ -1,0 +1,20 @@
+id = 0
+reqs_per_client = 10
+reply_size = 100
+execution = 'Threadpool'
+
+[batch]
+min = 1
+max = 1
+
+[batch.timeout]
+secs = 0
+nanos = 0
+
+[[peers]]
+id = 0
+host = '127.0.0.1'
+client_port = 10000
+peer_port = 10001
+private_key = ''
+public_key = ''

@@ -1,0 +1,10 @@
+.idea
+.vscode
+**/target
+**/*.rs.bk
+*.log
+client_output.*
+scripts/bugreport.txt
+keys/*
+*.log
+shadow.data

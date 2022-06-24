@@ -1,0 +1,17 @@
+[package]
+name = "msgdump"
+version = "0.1.0"
+authors = ["Kai Bleeke <bleeke@ibr.cs.tu-bs.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+themis-core = {path = "../../themis-core"}
+serde = "1.0.134"
+rmp-serde = "1.0.0"
+bytes = "1.1.0"
+anyhow = "1.0.52"
+tokio-util = "0.6.9"
+clap = { version = "3.0.10", features = ["derive"] }
+base64 = "0.13.0"

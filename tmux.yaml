@@ -1,0 +1,18 @@
+session_name: themis
+before_script: cargo build --bin themis-bench-app --release #--features metrics
+start_directoy: "${PWD}"
+global_options:
+  default-shell: /bin/bash
+environment:
+  RUST_LOG: info
+  CONFIG: 'config/default/'
+  ARGS: ''
+windows:
+- window_name: themis
+  layout: tiled               # run as a first command in all panes
+  panes:
+    - ./target/release/themis-bench-app 0 --config "${CONFIG}"
+    - ./target/release/themis-bench-app 1 --config "${CONFIG}"
+    - ./target/release/themis-bench-app 2 --config "${CONFIG}"
+    - ./target/release/themis-bench-app 3 --config "${CONFIG}"
+    - ./target/release/bench-client --config "${CONFIG}" -c 20 -a 10 --duration 30

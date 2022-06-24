@@ -1,0 +1,25 @@
+[package]
+name = "themis-bench-app"
+version = "0.1.0"
+authors = ["Kai Bleeke <k.bleeke@tu-bs.de>"]
+edition = "2021"
+
+[dependencies]
+themis-core = {path = "../../themis-core"}
+themis-pbft = {path = "../../themis-pbft"}
+# themis-quic = {path = "../../themis-quic"}
+futures-util = "0.3.19"
+log = "0.4.14"
+bytes = "1.1.0"
+tracing-subscriber = { version = "0.3.6", features = ["env-filter"] }
+serde = "1.0.134"
+fnv = "1.0.7"
+clap = { version = "3.0.10", features = ["derive"] }
+rmp-serde = "1.0.0"
+atty = "0.2.14"
+tokio = { version = "1.15.0", features = ["rt", "rt-multi-thread"] }
+
+
+[features]
+metrics = ["themis-core/metrics", "themis-pbft/metrics"]
+full-metrics = ["metrics", "themis-pbft/full-metrics"]

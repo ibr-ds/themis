@@ -1,0 +1,16 @@
+[package]
+name = "cli-client"
+version = "0.1.0"
+authors = ["Kai Bleeke <bleeke@ibr.cs.tu-bs.de>"]
+edition = "2021"
+
+[dependencies]
+themis-client = {path = "../../themis-client"}
+themis-core = {path = "../../themis-core"}
+bytes = "1.1.0"
+log = "0.4.14"
+rand = "0.8.4"
+tokio = { version = "1.15.0", features = ["sync"] }
+futures-util = "0.3.19"
+clap = { version = "3.0.10", features = ["derive"] }
+tracing-subscriber = "0.3.6"

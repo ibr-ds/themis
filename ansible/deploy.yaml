@@ -1,0 +1,37 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: "Make directories"
+      file:
+        dest: "{{ base_dir }}{{ item }}"
+        state: "directory"
+        mode: 0775
+      loop:
+        - ""
+        - "/keys"
+        - "/config"
+    - name: "Uploading Key and Config"
+      synchronize:
+        src: "{{ item.src }}"
+        dest: "{{ base_dir }}{{ item.dest }}"
+        mode: push
+      loop:
+        - { src: "../config", dest: "/" }
+        - { src: "../keys", dest: "/" }
+- hosts: replicas
+  gather_facts: false
+  tasks:
+    - name: "Uploading Bench App"
+      synchronize:
+        dest: "{{ base_dir }}/"
+        src: "../target/x86_64-unknown-linux-gnu/release/themis-bench-app"
+        mode: push
+- hosts: clients
+  gather_facts: false
+  tasks:
+    - name: "Uploading Bench Client"
+      synchronize:
+        dest: "{{ base_dir }}/"
+        src: "../target/x86_64-unknown-linux-gnu/release/bench-client"
+        mode: push

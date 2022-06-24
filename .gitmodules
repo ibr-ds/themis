@@ -1,0 +1,7 @@
+[submodule "romio"]
+	path = romio
+	url = git@gitlab.ibr.cs.tu-bs.de:bleeke/romio.git
+	branch = master
+[submodule "kv-store-client/YCSB-C"]
+	path = kv-store-client/YCSB-C
+	url = https://github.com/basicthinker/YCSB-C.git

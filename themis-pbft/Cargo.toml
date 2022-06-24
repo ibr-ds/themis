@@ -1,0 +1,43 @@
+[package]
+name = "themis-pbft"
+version = "0.1.0"
+authors = ["Kai Bleeke <bleeke@ibr.cs.tu-bs.de>"]
+edition = "2021"
+
+[dependencies]
+bytes = "1.1.0"
+ring = "0.16.20"
+tracing = { version = "0.1.29", package = "tracing" }
+fnv = "1.0.7"
+futures-util = { version = "0.3.19", features = ["sink"] }
+snafu = "0.7.0"
+tokio = { version = "1.15.0", features = ["sync", "time"] }
+either = "1.6.1"
+tokio-util = { version = "0.6.9", features = ["time"] }
+prometheus = { version = "0.13.0", features = ["process"], optional = true }
+lazy_static = { version = "1.4.0", optional = true }
+anyhow = "1"
+thiserror ="1"
+
+[dependencies.serde]
+version = "1.0.134"
+features = ["derive"]
+
+[dependencies.themis-core]
+path = "../themis-core"
+
+[dev-dependencies]
+lazy_static = "1.4.0"
+tracing-subscriber = "0.3.6"
+tokio-test = "0.4.2"
+assert_matches = "1.5.0"
+tokio = { version = "1.15.0", features = ["macros"] }
+criterion = "0.3.5"
+
+[[bench]]
+name = "handle_view_change"
+harness = false
+
+[features]
+metrics = ["prometheus", "lazy_static", "themis-core/metrics"]
+full-metrics = ["metrics"]

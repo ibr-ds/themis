@@ -1,0 +1,52 @@
+reply_size = 100
+execution = 'Single'
+batching = false
+
+[authentication]
+peers = "Ed25519"
+clients = "Hmac"
+
+[batch]
+min = 100
+max = 100
+timeout = { secs = 0, nanos = 10_000_000 }
+
+[[peers]]
+id = 0
+host = '127.0.0.1'
+client_port = 10002
+peer_port = 10003
+private_key = "keys/ed-25519-private-0"
+public_key = "keys/ed-25519-public-0"
+certificate = "keys/ed-25519-cert-0"
+prometheus_port = 8080
+
+[[peers]]
+id = 1
+host = '127.0.0.1'
+client_port = 10102
+peer_port = 10103
+private_key = "keys/ed-25519-private-1"
+public_key = "keys/ed-25519-public-1"
+certificate = "keys/ed-25519-cert-1"
+prometheus_port = 8081
+
+[[peers]]
+id = 2
+host = '127.0.0.1'
+client_port = 10202
+peer_port = 10203
+private_key = "keys/ed-25519-private-2"
+public_key = "keys/ed-25519-public-2"
+certificate = "keys/ed-25519-cert-2"
+prometheus_port = 8082
+
+[[peers]]
+id = 3
+host = '127.0.0.1'
+client_port = 10302
+peer_port = 10303
+private_key = "keys/ed-25519-private-3"
+public_key = "keys/ed-25519-public-3"
+certificate = "keys/ed-25519-cert-3"
+prometheus_port = 8083

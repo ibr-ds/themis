@@ -1,0 +1,15 @@
+[package]
+name = "kvs-core"
+version = "0.1.0"
+authors = ["Jan Niklas Drescher <drescher@ibr.cs.tu-bs.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = { version = "1.1.0", features = ["serde"] }
+serde_bytes = "0.11.5"
+rmp-serde = "1.0.0"
+thiserror = "1.0.30"
+serde = { version = "1.0.134", features = ["derive"] }
+

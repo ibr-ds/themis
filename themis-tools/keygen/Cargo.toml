@@ -1,0 +1,13 @@
+[package]
+name = "keygen"
+version = "0.1.0"
+authors = ["Kai Bleeke <k.bleeke@tu-bs.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ring = { version = "0.16.20", features = ["std"] }
+clap = { version = "3.0.10", features = ["derive"] }
+rcgen = "0.8.14"
+anyhow = "1.0.52"

@@ -1,0 +1,19 @@
+[package]
+name = "themis-client"
+version = "0.1.0"
+authors = ["Kai Bleeke <k.bleeke@tu-bs.de>"]
+edition = "2021"
+
+[dependencies]
+themis-core = { path = "../themis-core" }
+futures-util = "0.3.19"
+log = "0.4.14"
+bytes = "1.1.0"
+ring = "0.16.20"
+fnv = "1.0.7"
+snafu = { version = "0.7.0", features = ["futures"] }
+
+[dependencies.tokio]
+version = "1.15.0"
+features = ["time", "rt", "sync", "net"]
+

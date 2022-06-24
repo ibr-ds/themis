@@ -1,0 +1,20 @@
+[package]
+name = "broadcaster"
+version = "0.1.0"
+authors = ["Kai Bleeke <bleeke@ibr.cs.tu-bs.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+themis-core = {path = "../../themis-core"}
+tokio = { version = "1.15.0", features = ["rt", "net", "macros"] }
+futures-util = "0.3.19"
+clap = { version = "3.0.10", features = ["derive"] }
+anyhow = "1.0.52"
+tracing = { version = "0.1.29", package = "tracing" }
+tracing-subscriber = "0.3.6"
+rand = "0.8.4"
+tokio-util = { version = "0.6.9", features = ["codec"] }
+ring = "0.16.20"
+bytes = "1.1.0"

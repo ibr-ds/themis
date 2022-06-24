@@ -1,0 +1,25 @@
+stages:
+    - nightly build
+    - unit tests
+
+#nightly build
+rust nightly:
+    stage: nightly build
+    image: rustlang/rust:nightly
+    only:
+        - schedules
+    script:
+        - rm rust-toolchain
+        - rustc --version
+        - cargo build
+    allow_failure: true
+
+
+#build the project and run unit tests
+cargo build & test:
+    stage: unit tests
+    image: rustlang/rust:nightly
+    except:
+        - schedules
+    script:
+        - cargo test --tests #run unit tests

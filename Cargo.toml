@@ -1,0 +1,22 @@
+[workspace]
+
+members = [
+    "themis-config",
+    "themis-core",
+    "themis-client",
+    "themis-apps/themis-bench-app",
+    "themis-pbft",
+    "themis-clients/cli-client",
+    "themis-clients/bench-client",
+    "themis-clients/broadcaster",
+    "themis-tools/keygen",
+    "themis-tools/msgdump",
+    "themis-apps/kvs/kvs-core",
+    "themis-clients/kvs-client",
+    "themis-apps/kvs/kvs-app",
+]
+
+[profile.performance]
+inherits = "release"
+lto = true
+# debug = true
