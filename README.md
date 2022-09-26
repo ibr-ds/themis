@@ -1,5 +1,28 @@
 # BFT Framework written in Rust + PBFT implementation
 
+## Paper
+
+The paper was presented at SERIAL 2019 and is available [here](https://www.ibr.cs.tu-bs.de/users/ruesch/papers/ruesch-serial19.pdf) and in the [ACM Digital Library](https://dl.acm.org/doi/10.1145/3366611.3368144).
+
+Please cite us if you use our work in your research:
+```
+@inproceedings{ruesch2019themis,
+  author = {R\"{u}sch, Signe and Bleeke, Kai and Kapitza, R\"{u}diger},
+  title = {{Themis: An Efficient and Memory-Safe BFT Framework in Rust: Research Statement}},
+  booktitle = {Proceedings of the 3rd Workshop on Scalable and Resilient Infrastructures for Distributed Ledgers},
+  series = {SERIAL '19}
+  year = {2019},
+  isbn = {9781450370295},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3366611.3368144},
+  doi = {10.1145/3366611.3368144},
+  pages = {9–10},
+  numpages = {2},
+  location = {Davis, CA, USA},
+}
+```
+
 ## Structure
 
 ### ./themis-core
